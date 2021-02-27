@@ -1,0 +1,65 @@
+
+*{
+    box-sizing: border-box;
+    /* by selecting the box-sizing as border now when we say width and height the padding and border are also included in it. */
+}
+
+
+body{
+    margin:0;
+    /* removing any additional margin introduced by the browser */
+    background:#dddddd;
+}
+
+header{
+    display: flex;
+    font-size:3rem;
+    justify-content:center; 
+    color:#fa1e0e;
+}
+
+.row{
+    display:flex;
+    flex-wrap: wrap;
+    padding:0 4px;
+
+}
+
+/* flex is the short hand notation for the flex-grow flex-shrink and flex-basis */
+
+/* default flex-grow is 0 and flex-shrink is 1 and flex-basis is for the initial size of the flex item */
+/* by omitting it is set to auto that means it takes from the main axis size which is hegiht or width  */
+/* it can accept any units related to font size */
+.column{
+
+    flex: 30%; 
+    /* this means the item size i.e width will be 30% of the container. it depends on the main axis it can be horizontal or vertical */
+
+    
+    /* this means the item will not exceed the 30% of the container. */
+    padding:0 20px;
+}
+
+.column img {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  @media screen and (max-width:800px)
+  {
+    .column {
+        flex:50%;
+       
+        padding:0 10px;
+    }
+  }
+
+  @media screen and (max-width:600px){
+
+    .column{
+        flex:100%;
+        padding:0 10px;
+        
+    }
+  }
